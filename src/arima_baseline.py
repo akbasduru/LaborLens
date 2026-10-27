@@ -1,15 +1,15 @@
 """
 Standard ARIMA baseline for the US unemployment rate (BLS series LNS14000000).
 
-Input : bls_data.csv, produced by your BLS fetch script
+Input : data/raw/unemployment_2015_2026.csv, produced by src/unemployment_fetch.py
         (columns: series_id, date, year, period, period_name, value)
 Method: expanding-window, one-step-ahead ARIMA forecasts. At every test month the
         model is refit on all earlier months only, then predicts that month.
-Output: RMSE / MAE for several test-window lengths, plus a CSV and a plot of the
-        primary window.
+Output: results/arima_baseline_scores.csv, arima_baseline_forecasts.csv,
+        arima_baseline_plot.png (RMSE / MAE per test window, plus the primary window)
 
-Run:  python arima_baseline.py
-Needs: pip install pandas numpy statsmodels matplotlib
+Run:  uv run python src/arima_baseline.py   (from the project root)
+Needs: uv venv && uv pip install -r requirements.txt  (see README)
 """
 
 import warnings

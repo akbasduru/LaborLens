@@ -9,8 +9,8 @@ Method: one-step-ahead naive forecasts. The forecast for month t is simply the
 Output: results/naive_baseline_scores.csv, naive_baseline_forecasts.csv,
         naive_baseline_plot.png (RMSE / MAE per test window, plus the primary window)
 
-Run:  python src/naive_baseline.py   (from the project root)
-Needs: pip install pandas numpy matplotlib
+Run:  uv run python src/naive_baseline.py   (from the project root)
+Needs: uv pip install -r requirements.txt
 """
 
 from pathlib import Path
