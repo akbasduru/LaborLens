@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 640" width="1640" height="640" font-family="'IBM Plex Sans', Helvetica, Arial, sans-serif">
+  <rect width="1640" height="640" fill="#F7F6F2"/>
+
+  <!-- Column labels -->
+  <g font-size="16" style="font-weight:600" fill="#6B7280" letter-spacing="2">
+    <text x="40" y="60">1 · SOURCES</text>
+    <text x="370" y="60">2 · COLLECT</text>
+    <text x="690" y="60">3 · PREPARE</text>
+    <text x="1010" y="60">4 · MODELS</text>
+    <text x="1330" y="60">5 · COMPARE</text>
+  </g>
+
+  <!-- Sources -->
+  <g>
+    <rect x="40" y="110" width="260" height="120" rx="12" fill="#ECEBE6" stroke="#6B7280" stroke-width="2"/>
+    <text x="60" y="152" font-size="24" style="font-weight:700" fill="#14213D">BLS API</text>
+    <text x="60" y="184" font-size="18" fill="#4A5568">Unemployment, payrolls,</text>
+    <text x="60" y="208" font-size="18" fill="#4A5568">JOLTS (monthly)</text>
+
+    <rect x="40" y="260" width="260" height="120" rx="12" fill="#ECEBE6" stroke="#6B7280" stroke-width="2"/>
+    <text x="60" y="302" font-size="24" style="font-weight:700" fill="#14213D">FRED</text>
+    <text x="60" y="334" font-size="18" fill="#4A5568">Fed funds, CPI, jobless</text>
+    <text x="60" y="358" font-size="18" fill="#4A5568">claims, sentiment</text>
+
+    <rect x="40" y="410" width="260" height="120" rx="12" fill="#ECEBE6" stroke="#6B7280" stroke-width="2"/>
+    <text x="60" y="452" font-size="24" style="font-weight:700" fill="#14213D">Indeed Hiring Lab</text>
+    <text x="60" y="484" font-size="18" fill="#4A5568">Job postings index</text>
+    <text x="60" y="508" font-size="18" fill="#4A5568">(daily, since 2020)</text>
+  </g>
+
+  <!-- Sources -> Collect -->
+  <g fill="none" stroke="#6B7280" stroke-width="2.5">
+    <path d="M300,170 C335,170 335,300 360,300"/>
+    <path d="M300,320 L360,320"/>
+    <path d="M300,470 C335,470 335,340 360,340"/>
+  </g>
+
+  <!-- Collect (built) -->
+  <rect x="370" y="250" width="250" height="140" rx="12" fill="#EAF1FA" stroke="#2F6DB5" stroke-width="3"/>
+  <text x="390" y="292" font-size="24" style="font-weight:700" fill="#14213D">Fetch &amp; clean</text>
+  <text x="390" y="324" font-size="18" fill="#4A5568">Python fetch scripts</text>
+  <text x="390" y="348" font-size="18" fill="#4A5568">→ data/*.csv; missing</text>
+  <text x="390" y="372" font-size="18" fill="#4A5568">months kept as gaps</text>
+
+  <!-- Align (planned) -->
+  <rect x="690" y="250" width="250" height="140" rx="12" fill="#FBF1E7" stroke="#A4520F" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="710" y="292" font-size="24" style="font-weight:700" fill="#14213D">Align to monthly</text>
+  <text x="710" y="324" font-size="18" fill="#4A5568">Daily postings and</text>
+  <text x="710" y="348" font-size="18" fill="#4A5568">weekly claims → one</text>
+  <text x="710" y="372" font-size="18" fill="#4A5568">monthly table</text>
+
+  <!-- Baselines (built) -->
+  <rect x="1010" y="90" width="250" height="120" rx="12" fill="#EAF1FA" stroke="#2F6DB5" stroke-width="3"/>
+  <text x="1030" y="132" font-size="24" style="font-weight:700" fill="#14213D">Baselines</text>
+  <text x="1030" y="164" font-size="18" fill="#4A5568">Naive (last value)</text>
+  <text x="1030" y="188" font-size="18" fill="#4A5568">ARIMA(1,1,1)</text>
+
+  <!-- AI nowcaster (planned) -->
+  <rect x="1010" y="250" width="250" height="140" rx="12" fill="#FBF1E7" stroke="#A4520F" stroke-width="3" stroke-dasharray="10 7"/>
+  <text x="1030" y="292" font-size="24" style="font-weight:700" fill="#14213D">DNN Model</text>
+  <text x="1030" y="324" font-size="18" fill="#4A5568">Deep neural network</text>
+  <text x="1030" y="348" font-size="18" fill="#4A5568">on all indicators →</text>
+  <text x="1030" y="372" font-size="18" fill="#4A5568">this month's rate</text>
+
+  <!-- Evaluate (built) -->
+  <rect x="1330" y="190" width="270" height="280" rx="12" fill="#EAF1FA" stroke="#2F6DB5" stroke-width="3"/>
+  <text x="1350" y="234" font-size="24" style="font-weight:700" fill="#14213D">Evaluate</text>
+  <text x="1350" y="268" font-size="18" fill="#4A5568">Same testing method</text>
+  <text x="1350" y="292" font-size="18" fill="#4A5568">for each model</text>
+  <text x="1350" y="352" font-size="18" fill="#4A5568">RMSE &amp; MAE over</text>
+  <text x="1350" y="376" font-size="18" fill="#4A5568">12 / 24 / 36 months</text>
+  <text x="1350" y="412" font-size="18" fill="#4A5568">→ results/</text>
+
+  <!-- Built connections -->
+  <g fill="none" stroke="#2F6DB5" stroke-width="3">
+    <path d="M495,250 L495,150 L998,150"/>
+    <path d="M1260,150 L1295,150 L1295,230 L1318,230"/>
+  </g>
+  <text x="560" y="138" font-size="16" fill="#2F6DB5">unemployment rate only</text>
+
+  <!-- Planned connections -->
+  <g fill="none" stroke="#A4520F" stroke-width="3" stroke-dasharray="9 6">
+    <path d="M620,320 L678,320"/>
+    <path d="M940,320 L998,320"/>
+    <path d="M1260,320 L1318,320"/>
+  </g>
+
+  <!-- Arrowheads (drawn as shapes so every renderer shows them) -->
+  <g fill="#6B7280">
+    <polygon points="356,292 370,300 356,308"/>
+    <polygon points="356,312 370,320 356,328"/>
+    <polygon points="356,332 370,340 356,348"/>
+  </g>
+  <g fill="#2F6DB5">
+    <polygon points="994,142 1010,150 994,158"/>
+    <polygon points="1314,222 1330,230 1314,238"/>
+  </g>
+  <g fill="#A4520F">
+    <polygon points="674,312 690,320 674,328"/>
+    <polygon points="994,312 1010,320 994,328"/>
+    <polygon points="1314,312 1330,320 1314,328"/>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="18" fill="#14213D">
+    <line x1="40" y1="600" x2="90" y2="600" stroke="#2F6DB5" stroke-width="4"/>
+    <text x="102" y="606">Built</text>
+    <line x1="190" y1="600" x2="240" y2="600" stroke="#A4520F" stroke-width="4" stroke-dasharray="9 6"/>
+    <text x="252" y="606">Planned</text>
+  </g>
+</svg>

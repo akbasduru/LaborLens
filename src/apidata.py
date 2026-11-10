@@ -1,14 +1,19 @@
 import json
+import os
 
 import pandas as pd  # type: ignore
 import requests  # type: ignore
+
+API_KEY = os.environ.get("BLS_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Set the BLS_API_KEY environment variable (see README)")
 
 headers = {'Content-type': 'application/json'}
 data = json.dumps({
     "seriesid": ["CES0000000001", "LNS14000000", "JTU110099000000000HIL"],   # Nonfarm payroll employment, Unemployment rate and Job Openings and Labor Turnover Survey
     "startyear": "2020",
     "endyear": "2026",
-    "registrationkey": "a9263bee36ce47d5a37eb6eaac684c27"
+    "registrationkey": API_KEY
 })
 
 response = requests.post(

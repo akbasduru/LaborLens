@@ -1,10 +1,13 @@
 import json
+import os
 from pathlib import Path
 
 import pandas as pd  # type: ignore
 import requests  # type: ignore
 
-API_KEY = "a9263bee36ce47d5a37eb6eaac684c27"
+API_KEY = os.environ.get("BLS_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Set the BLS_API_KEY environment variable (see README)")
 
 headers = {'Content-type': 'application/json'}
 data = json.dumps({
